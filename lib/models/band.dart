@@ -10,8 +10,8 @@ class Band {
   });
 
   factory Band.fromMap(Map<String, dynamic> obj) => Band(
-        id: obj["id"],
-        name: obj["name"],
-        votes: obj["votes"],
+        id: (obj.containsKey('id')) ? obj["id"] : '0',
+        name: (obj.containsKey('name')) ? obj["name"] : 'no-name',
+        votes: (obj.containsKey('votes')) ? obj["votes"] : 0,
       );
 }
